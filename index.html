@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<title>Blogspot Fetch</title>
+	<meta name="google" content="notranslate">
+	<meta name="robots" content="index,follow">
+	<meta name="revisit-after" content="1 days">
+	<meta name="title" content="Blogspot Fetch">
+	<meta name="author" content="xxxxxxx">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<!-- <meta name="google-site-verification" content="xxxxxxx" /> -->
+	<meta name="description" content="xxxxxxx">
+	<meta name="keywords" content="xxxxxxx">
+	<meta property="og:title" content="Blogspot Fetch">
+	<meta property="og:site_name" content="xxxxxxx">
+	<meta property="og:url" content="wajibUrl">
+	<meta property="og:description" content="xxxxxxx">
+	<meta property="og:type" content="website">
+<!--
+	<meta property="og:image" content="wajibUrl">
+	<link rel="shortcut icon" href="directory/eksistensiFile" type="image/x-icon">
+	<link rel="canonical" href="https://namadomain.subdomain.domain" />
+-->
+	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <style>
+      h1 {
+        font-family: 'Dosis', sans-serif;
+      }
+    </style>
+</head>
+<body>
+
+
+<div id="blog-posts"></div>
+
+<script>
+  // Ganti URL feed dengan URL blog Anda
+  const feedUrl = 'https://indoreferences.blogspot.com/feeds/posts/default?alt=json';
+  const apiKey = 'AIzaSyAfZn0eVZ2s_rimIm2CMma7dPIAr4uLkm4'; // Ganti dengan API KEY Anda
+
+  async function fetchBlogPosts() {
+    try {
+      const response = await fetch(feedUrl, {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const posts = data.feed.entry;
+
+      // Menampilkan daftar postingan
+      const blogPostsContainer = document.getElementById('blog-posts');
+      posts.forEach(post => {
+        const title = post.title.$t;
+        const link = post.link.find(link => link.rel === 'alternate').href;
+
+        const postElement = document.createElement('div');
+        postElement.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+        blogPostsContainer.appendChild(postElement);
+      });
+    } catch (error) {
+      console.error('Error fetching or displaying blog posts:', error);
+    }
+  }
+
+  // Panggil fungsi untuk mengambil dan menampilkan postingan
+  fetchBlogPosts();
+</script>
+
+
+	<script src="script.js"></script>
+</body>
+</html>

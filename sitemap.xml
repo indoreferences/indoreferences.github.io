@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <!-- ***** URL Halaman Index ***** -->
+    <url>
+        <loc>example.com/index</loc>
+        <lastmod>2023-10-30T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>example.com/images/hero.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>example.com/images/ikon.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>example.com/images/parallax.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>example.com/images/thumbnail.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>example.com/images/klien-bambang-aluminium-tangerang.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>example.com/images/klien-cv-gusam-cipta-karya.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>example.com/images/klien-jasa-konstruksi-bangunan.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>example.com/images/klien-kontraktor-trenggalek.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>example.com/images/klien-pt-pesona-ericha-mandiri.png</image:loc>
+        </image:image>
+    </url>
+    <!-- ***** URL Halaman about ***** -->
+    <url>
+        <loc>example.com/about</loc>
+        <lastmod>2023-10-30T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>example.com/images/hero.png</image:loc>
+        </image:image>
+    </url>
+</urlset>
